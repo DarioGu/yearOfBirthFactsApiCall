@@ -3,6 +3,7 @@
 function getUserYear() {
     const userYear = document.getElementById('userYear').value;
     console.log(userYear);
+    document.getElementById('userYear').value = "";
 }
 
 document.getElementById('submitButton').addEventListener('click', getUserYear);
