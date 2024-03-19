@@ -1,7 +1,10 @@
 // get the text from the text input field when the submit button is clicked or the enter key is hit and save it in a variable
+function getUserYear() {
+    const userYear = document.getElementById('userYear').value;
+    console.log(userYear);
+}
 
-const userYear = document.getElementById('userYear').value;
-
+document.getElementById('submitButton').addEventListener('click', getUserYear);
 
 //transfer the text value into the API Url
 
