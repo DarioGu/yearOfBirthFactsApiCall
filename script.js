@@ -8,7 +8,7 @@ async function getUserYear() {
     console.log(userYear);
 
     //transfer the text value into the API Url and get the generated text for the label from the api and save it in a variable
-    const response = await fetch(`http://numbersapi.com/${userYear}/year?json`);
+    const response = await fetch(`https://numbersapi.com/${userYear}/year?json`);
     output = await response.json();
 
     //display the generated text from the api in the label on the webpage
