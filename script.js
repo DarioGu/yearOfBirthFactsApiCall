@@ -1,16 +1,27 @@
 // get the text from the text input field when the submit button is clicked 
 
-function getUserYear() {
-    const userYear = document.getElementById('userYear').value;
+var userYear = ``;
+var output;
+
+async function getUserYear() {
+    userYear = document.getElementById('userYear').value;
     console.log(userYear);
-    document.getElementById('userYear').value = "";
+
+    //transfer the text value into the API Url and get the generated text for the label from the api and save it in a variable
+    const response = await fetch(`http://numbersapi.com/${userYear}/year?json`);
+    output = await response.json();
+
+    //display the generated text from the api in the label on the webpage
+    refreshLabel();
+}
+
+function refreshLabel () {
+   const label = document.getElementById('outputLabel');
+   label.textContent = output.text;
 }
 
 document.getElementById('submitButton').addEventListener('click', getUserYear);
 
-//transfer the text value into the API Url
 
-//get the generated text for the label from the api and save it in a variable
 
-//display the generated text from the api in the label on the webpage
 
